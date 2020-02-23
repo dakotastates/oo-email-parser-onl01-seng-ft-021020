@@ -14,7 +14,14 @@ class EmailAddressParser
   def parse
     if @email_addresses.include?"," then
       b = []
-      @email_addresses.split(", ").uniq
+      @email_addresses.split(", ").uniq.each do |v|
+        if !v.include?" " then
+          b << v
+        else
+          z = v.split(" ")
+          
+        end
+      end
     else
       @email_addresses.split(" ").uniq
     end
