@@ -18,10 +18,10 @@ class EmailAddressParser
         if !v.include?" " then
           b << v
         else
-          z = v.split(" ")
-          
+          v.split(" ").each { |z| b << z}
         end
       end
+      b
     else
       @email_addresses.split(" ").uniq
     end
