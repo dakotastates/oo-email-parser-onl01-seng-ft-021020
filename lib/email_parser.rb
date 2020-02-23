@@ -15,7 +15,7 @@ class EmailAddressParser
     if @email_addresses.include?"," then
       @email_addresses.split(",").uniq
     else
-      @email_addresses.split(" ").uniq
+      @email_addresses.split(" ").uniq.strip
     end
   end
 
