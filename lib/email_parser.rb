@@ -12,19 +12,6 @@ class EmailAddressParser
   end
 
   def parse
-    if @email_addresses.include?"," then
-      b = []
-      @email_addresses.split(", ").uniq.each do |v|
-        if !v.include?" " then
-          b << v
-        else
-          v.split(" ").each { |z| b << z}
-        end
-      end
-      b
-    else
-      @email_addresses.split(" ").uniq
-    end
+    @email_addresses.split(",").map {|v| v.split(" ") }.flatten.uniq
   end
-
 end
